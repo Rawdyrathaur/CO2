@@ -27,7 +27,7 @@ export const useCarbonStore = create((set, get) => ({
 
   fetchData: async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/carbon/hackathon/live');
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080'}/api/carbon/hackathon/live`);
       const newData = response.data;
 
       set({ data: newData });
@@ -67,7 +67,7 @@ export const useCarbonStore = create((set, get) => ({
 
   simulateMessages: async (count) => {
     try {
-      await axios.post('http://localhost:8080/api/carbon/discord/batch', {
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080'}/api/carbon/discord/batch`, {
         count,
         isSimulation: true  // Mark as test data
       });
@@ -81,7 +81,7 @@ export const useCarbonStore = create((set, get) => ({
 
   resetSimulations: async () => {
     try {
-      const response = await axios.post('http://localhost:8080/api/carbon/simulation/reset');
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080'}/api/carbon/simulation/reset`);
       console.log('Simulations reset:', response.data);
       // Fetch updated data after reset
       setTimeout(() => get().fetchData(), 500);

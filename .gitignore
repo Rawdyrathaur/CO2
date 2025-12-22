@@ -4,3 +4,8 @@
 # Node
 node_modules/
 .vite/
+
+# Environment variables
+.env
+.env.local
+.env.production
