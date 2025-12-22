@@ -1,10 +1,28 @@
 import { create } from 'zustand';
 import axios from 'axios';
 
+const loadHistory = () => {
+  try {
+    const saved = localStorage.getItem('carbonHistory');
+    return saved ? JSON.parse(saved) : [];
+  } catch {
+    return [];
+  }
+};
+
+const loadLastTimestamp = () => {
+  try {
+    const saved = localStorage.getItem('lastTimestamp');
+    return saved ? parseInt(saved) : null;
+  } catch {
+    return null;
+  }
+};
+
 export const useCarbonStore = create((set, get) => ({
   data: null,
-  history: [],
-  lastMinuteTimestamp: null,
+  history: loadHistory(),
+  lastMinuteTimestamp: loadLastTimestamp(),
   appliedOptimizations: {}, // Track applied carbon optimizations
 
   fetchData: async () => {
@@ -14,10 +32,9 @@ export const useCarbonStore = create((set, get) => ({
 
       set({ data: newData });
 
-      // Update history - only add a new point every minute
       const now = Date.now();
       const lastMinute = get().lastMinuteTimestamp;
-      const shouldAddPoint = !lastMinute || (now - lastMinute) >= 60000;
+      const shouldAddPoint = !lastMinute || (now - lastMinute) >= 10000;
 
       if (shouldAddPoint) {
         const currentHistory = get().history;
@@ -30,11 +47,12 @@ export const useCarbonStore = create((set, get) => ({
           timestamp: now
         }];
 
-        // Keep last 2 hours (120 minutes) of data - show all accumulated data
-        if (newHistory.length > 120) {
+        if (newHistory.length > 360) {
           newHistory.shift();
         }
 
+        localStorage.setItem('carbonHistory', JSON.stringify(newHistory));
+        localStorage.setItem('lastTimestamp', now.toString());
         set({ history: newHistory, lastMinuteTimestamp: now });
       }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FiExternalLink, FiCalendar, FiAlertCircle, FiCheckCircle, FiInfo } from 'react-icons/fi';
+import { FiExternalLink, FiAlertCircle, FiCheckCircle, FiInfo } from 'react-icons/fi';
 import axios from 'axios';
 
 export default function GlobalContext() {
@@ -53,27 +53,27 @@ export default function GlobalContext() {
 
   if (loading) {
     return (
-      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-gray-800/50">
-        <div className="flex items-center gap-2 mb-5">
-          <span className="text-xl">🌍</span>
-          <h3 className="text-white font-bold text-base">Global Context & Science</h3>
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 border border-gray-800/50">
+        <div className="flex items-center gap-2 mb-4 sm:mb-5">
+          <span className="text-base sm:text-lg md:text-xl">🌍</span>
+          <h3 className="text-white font-bold text-sm sm:text-base">Global Context & Science</h3>
         </div>
-        <div className="flex items-center justify-center py-8">
-          <div className="animate-pulse text-gray-500 text-sm">Loading latest research...</div>
+        <div className="flex items-center justify-center py-6 sm:py-8">
+          <div className="animate-pulse text-gray-500 text-xs sm:text-sm">Loading latest research...</div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-4 border border-gray-800/50">
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2">
-          <span className="text-base">🌍</span>
-          <h3 className="text-white font-bold text-sm">Global Context</h3>
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-gray-800/50">
+      <div className="flex items-center justify-between mb-2.5 sm:mb-3">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <span className="text-sm sm:text-base">🌍</span>
+          <h3 className="text-white font-bold text-xs sm:text-sm">Global Context</h3>
         </div>
-        <div className="px-2 py-0.5 bg-accent/10 rounded">
-          <span className="text-[10px] font-bold text-accent">{articles.length}</span>
+        <div className="px-1.5 sm:px-2 py-0.5 bg-accent/10 rounded">
+          <span className="text-[9px] sm:text-[10px] font-bold text-accent">{articles.length}</span>
         </div>
       </div>
 

@@ -32,54 +32,52 @@ export default function SimulationButton() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-gray-800/50">
-      <h4 className="text-white font-bold text-base mb-4">Test Simulation</h4>
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 border border-gray-800/50">
+      <h4 className="text-white font-bold text-sm sm:text-base mb-3 sm:mb-4">Test Simulation</h4>
 
-      {/* Message Breakdown */}
-      <div className="mb-4 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
-        <div className="flex justify-between items-center text-xs mb-1">
+      <div className="mb-3 sm:mb-4 p-2.5 sm:p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
+        <div className="flex justify-between items-center text-[10px] sm:text-xs mb-1">
           <span className="text-gray-400">Real bot messages:</span>
           <span className="text-green-400 font-semibold">{realMessages.toLocaleString()}</span>
         </div>
         {simMessages > 0 && (
-          <div className="flex justify-between items-center text-xs">
+          <div className="flex justify-between items-center text-[10px] sm:text-xs">
             <span className="text-gray-400">Test messages:</span>
             <span className="text-yellow-400 font-semibold">{simMessages.toLocaleString()}</span>
           </div>
         )}
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-2 sm:space-y-3">
         <input
           type="number"
           value={count}
           onChange={e => setCount(e.target.value)}
-          className="w-full p-3 rounded-lg bg-gray-800/50 text-white border border-gray-700/50 focus:border-accent outline-none transition-all"
+          className="w-full p-2.5 sm:p-3 rounded-lg bg-gray-800/50 text-white text-sm border border-gray-700/50 focus:border-accent outline-none transition-all"
           placeholder="Number of messages"
         />
         <button
           onClick={handleSimulate}
-          className="w-full bg-accent hover:bg-accent/90 text-black font-bold px-4 py-3 rounded-lg flex items-center justify-center gap-2 transition-all disabled:opacity-50"
+          className="w-full bg-accent hover:bg-accent/90 text-black font-bold px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all disabled:opacity-50 text-sm"
           disabled={isBusy}
         >
           {isBusy ? 'Running...' : (
             <>
-              <FiSend size={16} />
+              <FiSend size={14} />
               Simulate
             </>
           )}
         </button>
 
-        {/* Reset Button - Only show when simulations exist */}
         {simMessages > 0 && (
           <button
             onClick={handleReset}
-            className="w-full bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-600/30 font-semibold px-4 py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all disabled:opacity-50"
+            className="w-full bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-600/30 font-semibold px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all disabled:opacity-50 text-xs sm:text-sm"
             disabled={isResetting}
           >
             {isResetting ? 'Resetting...' : (
               <>
-                <FiRotateCcw size={14} />
+                <FiRotateCcw size={12} />
                 Undo Simulations
               </>
             )}

@@ -90,11 +90,7 @@ public class CarbonService {
             );
         }
     }
-    
-    /**
-     * Health check with circuit breaker pattern (simplified).
-     * Demonstrates: Graceful degradation, Monitoring
-     */
+  
     public ServiceHealthResponse checkHealth() {
         try {
             ResponseEntity<?> response = restTemplate.getForEntity(

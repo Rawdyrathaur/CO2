@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Row = ({ name, isOnline }) => (
-  <div className="flex items-center justify-between py-3">
-    <span className="text-white text-sm font-medium">{name}</span>
-    <span className={`text-xs px-3 py-1.5 rounded-full font-semibold ${isOnline ? 'bg-green-500/20 text-green-400' : 'bg-gray-700/50 text-gray-400'}`}>
+  <div className="flex items-center justify-between py-2 sm:py-2.5 md:py-3">
+    <span className="text-white text-xs sm:text-sm font-medium">{name}</span>
+    <span className={`text-[10px] sm:text-xs px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 rounded-full font-semibold ${isOnline ? 'bg-green-500/20 text-green-400' : 'bg-gray-700/50 text-gray-400'}`}>
       {isOnline ? 'Connected' : 'Offline'}
     </span>
   </div>
@@ -31,8 +31,8 @@ export default function DataSources() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-gray-800/50">
-      <h4 className="text-white font-bold text-base mb-4">Live Data Sources</h4>
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 border border-gray-800/50">
+      <h4 className="text-white font-bold text-sm sm:text-base mb-3 sm:mb-4">Live Data Sources</h4>
       <div className="space-y-1">
         <Row name="Discord" isOnline={status.discord} />
         <Row name="API" isOnline={status.api} />
