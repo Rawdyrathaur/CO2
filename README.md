@@ -3,7 +3,7 @@
 > Real-time carbon emission tracking for digital communities
 
 [![Live Demo](https://img.shields.io/badge/demo-live-green)](https://co-2-9w39s9j9a-itsvicky25s-projects.vercel.app/)
-[![License](https://img.shields.io/badge/license-ISC-blue.svg)](LICENSE)
+[![Demo Video](https://img.shields.io/badge/demo-video-red?logo=youtube)](https://www.youtube.com/watch?v=c8UEOE1E4zc)
 
 **Carbon Pulse** transforms invisible digital carbon emissions into actionable insights, empowering Discord communities to understand and reduce their environmental impact through real-time monitoring and data-driven recommendations.
 
