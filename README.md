@@ -35,27 +35,8 @@ Digital communication generates significant carbon emissions, yet these impacts 
 
 ## 🏗️ Architecture
 
-```
-┌─────────────────┐
-│  Discord Bots   │ → Listener, Steady, Burst
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Spring Boot    │ → Batch Processing, API Layer
-│    Backend      │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  CO2 Microservice│ → Carbon Calculations (CO2.js)
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   React App     │ → Visualization & Dashboard
-└─────────────────┘
-```
+<img width="2248" height="778" alt="image" src="https://github.com/user-attachments/assets/8906683f-9293-4c1e-8931-0abc7ec79572" />
+
 
 ## 🛠️ Tech Stack
 
