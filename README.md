@@ -148,13 +148,6 @@ Carbon Pulse uses the **Sustainable Web Design (SWD)** model from the Green Web 
 
 Formula: `CO2 = (data_transferred × energy_per_byte × carbon_intensity)`
 
-## 🎨 Screenshots
-
-### Dashboard
-![Dashboard](https://via.placeholder.com/800x400?text=Real-time+Dashboard)
-
-### Mobile View
-![Mobile](https://via.placeholder.com/400x600?text=Mobile+Responsive)
 
 ## 🏆 Hackathon Criteria Alignment
 
